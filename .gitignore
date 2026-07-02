@@ -1,0 +1,7 @@
+# Ignore everything inside input
+input/*
+!input/.gitkeep
+
+# Ignore everything inside output
+output/*
+!output/.gitkeep
