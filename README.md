@@ -1,68 +1,83 @@
-# JPEG Cleaner
+# Image Optimizer (PNG/JPG → JPEG Cleaner)
 
-A lightweight Python tool to optimize JPEG images and remove all metadata (EXIF, IPTC, XMP) while preserving image quality.
+این اسکریپت برای تبدیل و بهینه‌سازی تصاویر داخل یک پوشه طراحی شده.
+همه عکس‌ها به JPEG فشرده و بدون متادیتا تبدیل می‌شن.
 
-## Features
+---
 
-- Remove all metadata
-- Optimize JPEG compression
-- Progressive JPEG output
-- Batch process entire folders
-- Preserve directory structure
-- Automatically clean the output folder before each run
+## 🚀 قابلیت‌ها
 
-## Project Structure
+- تبدیل PNG / JPG / JPEG به JPEG
+- حذف کامل متادیتا (EXIF / GPS / ...)
+- تبدیل PNG شفاف به JPG با بک‌گراند سفید
+- فشرده‌سازی با کیفیت قابل تنظیم
+- نام‌گذاری رندوم برای خروجی
+- پشتیبانی از فولدرهای تو در تو
 
-```text
-project/
-│
-├── input/
-│   ├── image1.jpg
-│   └── ...
-│
-├── output/
-│
-└── optimize.py
+---
+
+## 📁 ساختار پروژه
+
 ```
 
-## Installation
+project/
+├── input/ # تصاویر ورودی
+├── output/ # خروجی نهایی
+├── main.py # اسکریپت اصلی
+└── README.md
+
+```
+
+---
+
+## ⚙️ نصب
 
 ```bash
 pip install pillow
 ```
 
-## Usage
+---
 
-1. Place your `.jpg` and `.jpeg` files inside the `input` folder.
-
-2. Run:
+## ▶️ اجرا
 
 ```bash
-python optimize.py
+python main.py
 ```
 
-3. Optimized images will be generated in the `output` folder.
+---
 
-## Configuration
+## 🔧 تنظیمات
 
-You can modify the compression quality in the script:
+داخل `main.py`:
 
 ```python
-QUALITY = 85
+QUALITY = 60  # کیفیت خروجی (0 تا 100)
 ```
 
-Higher values preserve more quality but produce larger files.
+---
 
-## Supported Formats
+## 📌 نکات مهم
 
-- JPG
-- JPEG
+- فقط فایل‌های png / jpg / jpeg پردازش می‌شن
+- خروجی همیشه jpg هست
+- تمام متادیتا حذف میشه
+- PNG شفاف → تبدیل به بک‌گراند سفید
 
-## Requirements
+---
 
-- Python 3.9+
-- Pillow
+## 💡 کاربردها
 
-## License
+- بهینه‌سازی تصاویر برای وب و سئو
+- کاهش حجم تصاویر برای CDN
+- حذف اطلاعات حساس (EXIF)
+- آماده‌سازی تصاویر برای انتشار
 
-MIT
+---
+
+## 🧠 ایده توسعه
+
+- اضافه کردن WebP / AVIF
+- resize هوشمند
+- CLI arguments
+- پردازش چندنخی (multi-thread)
+- حفظ نام اصلی فایل (اختیاری)
